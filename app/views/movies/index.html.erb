@@ -1,0 +1,19 @@
+<h1> My Movies </h1>
+
+<ul>
+    <%@movies.each_with_index do |movie, index|%>
+    <li> 
+        Title: <%=movie["title"]%> 
+        Rating: <%=movie["rating"]%> 
+        <%= link_to("Edit Movie", edit_movie_path(index)) %>
+
+    </li>
+
+    <%end%>
+
+</ul>
+
+<div>
+    <%#link_to() takes a string for the button, and then the href to go to%>
+    <%= link_to("Create New Movie", new_movie_path)%>
+</div>
